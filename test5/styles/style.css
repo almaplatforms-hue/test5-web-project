@@ -1,0 +1,664 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url("../fonts/Gilroy-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url("../fonts/gilroy-medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url("../fonts/Gilroy-Bold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url("../fonts/Gilroy-ExtraBold.ttf");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: Tavolga;
+    src: url("../fonts/Tavolga.ttf");
+    font-weight: normal;
+}
+
+body {
+    font-family: Gilroy, sans-serif;
+    background-color: rgb(235, 168, 177);
+    font-weight: 400;
+}
+
+h2 {
+    font-family: "Tavolga";
+    font-weight: normal;
+}
+
+h1 {
+    font-family: "Tavolga";
+    font-weight: normal;
+}
+
+.header {
+    padding: 37px 0 30px 0;
+}
+
+.main {
+    overflow: hidden;
+
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 21px;
+}
+
+.header .container {
+    display: grid;
+    grid-template-columns: 346px 1fr 1fr;
+    align-items: center;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 313px;
+}
+
+.navigation a {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(119, 11, 29);
+}
+
+.navigation ul li {
+    border-bottom: 2px solid transparent;
+    transition: 200ms linear;
+}
+
+.navigation ul li:hover {
+    border-bottom: 2px solid #770B1DFF;
+}
+
+.header-phone {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    justify-self: end;
+}
+
+.main-block {
+    padding: 127px 0 107px 0;
+}
+
+.main-block .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-info {
+    margin-top: -12px;
+    z-index: 1;
+
+}
+
+.main-title {
+    font-size: 55px;
+    max-width: 580px;
+    font-family: "Tavolga";
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    line-height: 1.091;
+    margin-bottom: 60px;
+}
+
+.main-text {
+    max-width: 345px;
+    margin-bottom: 80px;
+    font-size: 18px;
+    font-family: "Tavolga";
+    color: rgb(255, 255, 255);
+    line-height: 1.389;
+}
+
+.btn {
+    background-image: linear-gradient(360deg, rgb(113, 8, 30) 0%, rgb(215, 72, 92) 100%);
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    border-radius: 40px;
+    border: 0;
+    padding: 22px 43px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .5s ease;
+    display: inline-block;
+}
+
+.btn:hover {
+    box-shadow: 0px 5px 9px 1px rgba(130, 19, 40, 0.5);
+}
+
+.main-image {
+    position: relative;
+
+}
+
+.main-image img {
+    max-width: 100%;
+    z-index: 2;
+}
+
+
+.main-image::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid rgba(130, 19, 40, 0.5);
+    z-index: -10;
+    animation: pulse 2.5s infinite ease-out;
+    top: 31%;
+    left: 37%;
+}
+
+.main-image::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid rgba(130, 19, 40, 0.5);
+    z-index: -10;
+    animation: pulse-2 2.5s infinite ease-out;
+    top: 31%;
+    left: 37%;
+}
+
+@keyframes pulse {
+
+    35% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(4.3);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-2 {
+
+    55% {
+        transform: scale(1.7);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(4.0);
+        opacity: 0;
+    }
+}
+
+.advantages {
+    padding: 119px 0;
+    background-color: rgb(255, 239, 239);
+}
+
+.advantages .container {
+    display: grid;
+    grid-column-gap: 87px;
+    grid-row-gap: 60px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 157px 1fr 1fr;
+    grid-template-areas: "advantage-title advantage-title advantage-image advantage-image"
+        "advantage-text advantage-text advantage-image advantage-image"
+        "advantage-info-block-1 advantage-info-block-2 advantage-info-block-3 advantage-info-block-4";
+
+}
+
+.advantage-title {
+    grid-area: advantage-title;
+    align-self: start;
+    font-size: 45px;
+    font-family: "Tavolga";
+    color: rgb(51, 25, 7);
+    line-height: 1.222;
+}
+
+.advantage-image {
+    grid-area: advantage-image;
+    margin-top: 61px;
+}
+
+.advantage-text {
+    grid-area: advantage-text;
+    align-self: start;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(51, 25, 7);
+    line-height: 1.556;
+    max-width: 397px;
+}
+
+.advantage-info-block-1 {
+    grid-area: advantage-info-block-1;
+    align-self: start;
+}
+
+.advantage-info-block-1:hover .advantage-block-number {
+    color: rgb(130, 19, 40);
+    background-color: rgb(235, 168, 177);
+}
+
+.advantage-info-block-2 {
+    grid-area: advantage-info-block-2;
+    align-self: start;
+}
+
+.advantage-info-block-2:hover .advantage-block-number {
+    color: rgb(130, 19, 40);
+    background-color: rgb(235, 168, 177);
+}
+
+.advantage-info-block-3 {
+    grid-area: advantage-info-block-3;
+    align-self: start;
+}
+
+.advantage-info-block-3:hover .advantage-block-number {
+    color: rgb(130, 19, 40);
+    background-color: rgb(235, 168, 177);
+}
+
+.advantage-info-block-4 {
+    grid-area: advantage-info-block-4;
+    align-self: start;
+}
+
+.advantage-info-block-4:hover .advantage-block-number {
+    color: rgb(130, 19, 40);
+    background-color: rgb(235, 168, 177);
+}
+
+.advantage-image img {
+    max-width: 100%;
+}
+
+.advantage-block-number {
+    font-size: 60px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    line-height: 0.67;
+    border-radius: 50%;
+    background-color: rgb(130, 19, 40);
+    width: 70px;
+    height: 70px;
+    justify-content: center;
+    align-items: end;
+    display: flex;
+    transition: all 0.5s ease;
+}
+
+.advantage-block-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: rgb(51, 25, 7);
+    line-height: 2.25;
+}
+
+.advantage-block-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(51, 25, 7);
+    line-height: 1.333;
+}
+
+.menu-title {
+    font-size: 45px;
+    font-family: "Tavolga";
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 120px;
+    font-weight: normal;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(230px, 263px));
+    gap: 29px;
+    margin: 143px 0 120px;
+}
+
+.menu-image {
+    position: absolute;
+    bottom: 167px;
+    left: 35px;
+    transition: all .5s;
+}
+
+.menu-item:hover .menu-image {
+    transform: scale(1.1);
+}
+
+.menu-item {
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px 21px 27px 21px;
+    transition: all .5s ease;
+}
+
+.menu-item-title {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-top: 86px;
+    font-family: "Tavolga";
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26px;
+}
+
+.menu-item span {
+    display: flex;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    padding-bottom: 16px;
+}
+
+.menu-item-action .btn {
+    padding: 19px 29px;
+    font-size: 16px;
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-price {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+}
+
+.make-order {
+    padding: 98px 0 120px;
+    background-color: rgb(255, 239, 239);
+}
+
+.make-order .container {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.order-block {
+    flex-direction: column;
+    display: flex;
+    max-width: 406px;
+    margin-right: 50px;
+    z-index: 2;
+}
+
+.order-title {
+    font-size: 45px;
+    font-family: "Tavolga";
+    color: rgb(51, 25, 7);
+    line-height: 1.222;
+    margin-bottom: 41px;
+    font-weight: normal;
+}
+
+.order-text {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(51, 25, 7);
+    line-height: 1.556;
+    margin-bottom: 15px;
+}
+
+.order-block span {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(18, 10, 6);
+    margin: 25px 0 21px;   
+}
+
+.order-input {
+    border-width: 1px;
+    border-color: rgb(130, 19, 40);
+    border-style: solid;
+    border-radius: 30px;
+    width: 293px;
+    margin-bottom: 15px;
+    padding: 23px 26px;
+    box-sizing: border-box;
+    background: rgb(254, 239, 238);
+}
+
+.order-input::placeholder {
+    color: rgb(203, 168, 110);
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(118, 12, 34);
+}
+
+.order-item-action .btn {
+
+    padding: 22px 79px;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-image {
+    position: absolute;
+/*    margin-top: 68px;*/
+    left: 150px;
+}
+
+.order-image-big-berrie {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    animation: fly 1s infinite linear alternate;
+}
+
+@keyframes fly {
+    from {
+        top: 20px;
+    }
+
+    to {
+        top: 60px;
+    }
+}
+
+.order-image-small-berrie {
+    position: absolute;
+    top: 450px;
+    left: 1000px;
+    animation: fly-2 1.5s infinite linear alternate;
+}
+
+@keyframes fly-2 {
+
+    from {
+        top: 450px;
+    }
+
+    to {
+        top: 420px;
+    }
+}
+
+.footer {
+    padding: 73px 0 63px;
+    background-color: rgb(192, 112, 124);
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.rights {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(227, 172, 180);
+}
+
+.footer-social-media {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.social-media-img {
+    margin-bottom: 15px;
+}
+
+.social-media-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.footer-number {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.footer-gift {
+    position: fixed;
+    bottom: 29px;
+    right: 28px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(#d7485c, #71081e);
+    cursor: pointer;
+    z-index: 3;
+    transition: all .5s ease;
+}
+
+.footer-gift:hover {
+    box-shadow: 0 0 12.6px 2.4px rgba(130, 19, 40, 0.5);
+}
+
+.gift-image {
+    left: 20%;
+    top: 20%;
+    position: relative;
+}
+
+.gift-action {
+    font-size: 15px;
+    font-weight: 500;
+    color: #770a1d;
+    border: 2px solid rgb(119, 10, 29);
+    border-radius: 10px;
+    background-color: #feefee;
+    padding: 0 10px 10px 10px;
+    text-align: left;
+    width: 140px;
+    right: 141px;
+    bottom: 2px;
+    position: fixed;
+    transition: all .5s ease;
+    opacity: 0;
+}
+
+.gift-action-square {
+    position: relative;
+    rotate: 45deg;
+    border: none;
+    box-sizing: border-box;
+    border-right: 2px solid rgb(119, 10, 29);
+    border-top: 2px solid rgb(119, 10, 29);
+    background: rgb(254, 239, 238);
+    width: 13px;
+    height: 13px;
+    right: -145px;
+    bottom: -23px;
+}
+
+.gift-action-text {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(119, 10, 29);
+    line-height: 1.333;
+}
+
+.footer-gift:hover .gift-action {
+    transform: translateY(-35px);
+    opacity: 1;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.close {
+    display: none;
+}
+
+
+
